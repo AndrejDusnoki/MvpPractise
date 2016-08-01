@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.andrej.myapplication.R;
 
@@ -58,8 +59,8 @@ public class MainActivity extends AppCompatActivity implements LocationSelectorV
         Locations.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Log.d("SLECETED ITEM","SELECETED"+i);
-                Log.d("Selected coordinates",presenter.getCoordinates(i));
+                Toast toast=Toast.makeText(getContext(),"Selected coordinates"+" "+presenter.getCoordinates(i),Toast.LENGTH_LONG);
+                toast.show();
             }
         });
     }
